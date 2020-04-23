@@ -416,17 +416,7 @@ export default {
       );
     }
 
-    const rootEl = createElement(
-      'label',
-      {
-        class: this.classes,
-        style: this.styles,
-        ref: 'root',
-      },
-      rootNodes,
-    );
-
-    const nodes = [rootEl];
+    const nodes = rootNodes;
 
     const helpTextSlot = scopedSlots.helpText && scopedSlots.helpText();
 
@@ -453,6 +443,7 @@ export default {
       {
         style: { width: this.fullwidth ? '100%' : void 0 },
         attrs: { id: this.id },
+        ref: 'root',
       },
       nodes,
     );
